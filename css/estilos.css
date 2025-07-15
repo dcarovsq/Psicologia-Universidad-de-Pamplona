@@ -1,0 +1,79 @@
+/* Fuente general y fondo */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #eaf4ff;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Título principal */
+h1 {
+  text-align: center;
+  color: #003366;
+  margin-bottom: 40px;
+}
+
+/* Título por semestre */
+h2 {
+  color: #003366;
+  margin-top: 20px;
+  font-size: 1.4em;
+  border-bottom: 2px solid #99cfff;
+  padding-bottom: 5px;
+}
+
+/* Contenedor general de materias por semestre */
+.grid {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 15px;
+  padding: 10px 0;
+  margin-bottom: 30px;
+  scroll-snap-type: x mandatory;
+}
+
+/* Cada materia (celda) */
+.cell {
+  background-color: #d0e7ff;
+  border: 2px solid #0055aa;
+  border-radius: 10px;
+  padding: 12px;
+  min-width: 160px;
+  text-align: center;
+  cursor: pointer;
+  white-space: pre-wrap;
+  transition: background-color 0.3s, transform 0.2s;
+  scroll-snap-align: start;
+}
+
+/* Hover animado */
+.cell:hover {
+  background-color: #a8d0ff;
+  transform: scale(1.05);
+}
+
+/* Materia bloqueada (no se puede tomar) */
+.cell.locked {
+  background-color: #cccccc;
+  border-color: #888888;
+  color: #666666;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Materia aprobada */
+.cell.completed {
+  background-color: #66ccff;
+  border-color: #3399cc;
+  color: #002244;
+}
+
+/* Barra de scroll oculta en navegadores modernos */
+.grid::-webkit-scrollbar {
+  height: 6px;
+}
+.grid::-webkit-scrollbar-thumb {
+  background-color: #b0c4de;
+  border-radius: 4px;
+}
